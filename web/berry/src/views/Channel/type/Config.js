@@ -172,6 +172,25 @@ const typeConfig = {
   31: {
     modelGroup: "lingyiwanwu",
   },
+  34: {
+    input: {
+      models: [
+        "llama-2-7b-chat-fp16",
+        "llama-2-7b-chat-int8",
+        "mistral-7b-instruct-v0.1",
+        "llama-3-8b-instruct",
+        "deepseek-coder-6.7b-base-awq",
+        "deepseek-coder-6.7b-instruct-awq"
+      ],
+    },
+    prompt: {
+      model_mapping:
+        '请输入要修改的模型映射关系，格式为：api请求模型ID:实际转发给渠道的模型ID，使用JSON表示，例如：\n' +
+        '{\n"llama-3-8b-instruct": "@cf/meta/llama-3-8b-instruct"\n}',
+      base_url: "必填，你的cloudflare调用地址，格式为：https://api.cloudflare.com/client/v4/accounts/ACCOUNT_ID/ai/run"
+    },
+    modelGroup: "cloudflare-workers-ai",
+  }
 };
 
 export { defaultConfig, typeConfig };

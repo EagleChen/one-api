@@ -27,6 +27,8 @@ func ToAPIType(channelType int) int {
 		apiType = apitype.Ollama
 	case AwsClaude:
 		apiType = apitype.AwsClaude
+	case Cloudflare:
+		apiType = apitype.Cloudflare
 	}
 
 	return apiType

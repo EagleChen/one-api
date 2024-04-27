@@ -113,6 +113,12 @@ export const CHANNEL_OPTIONS = {
     value: 32,
     color: 'primary'
   },
+  34: {
+    key: 34,
+    text: 'Cloudflare Workers AI',
+    value: 34,
+    color: 'primary'
+  },
   8: {
     key: 8,
     text: '自定义渠道',

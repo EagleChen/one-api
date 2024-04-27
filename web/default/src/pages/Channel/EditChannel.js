@@ -414,6 +414,14 @@ const EditChannel = () => {
             />
           </Form.Field>
           {
+            inputs.type === 34 && (
+              <Message>
+                如果"模型"没有设置为cloudflare的Model ID（形如@cf/meta/llama-3-8b-instruct），则必须填入转换信息，
+                例如："llama-3-8b-instruct": "@cf/meta/llama-3-8b-instruct"
+              </Message>
+            )
+          }
+          {
             inputs.type === 33 && (
               <Form.Field>
                 <Form.Input
@@ -481,12 +489,26 @@ const EditChannel = () => {
             )
           }
           {
-            inputs.type !== 3 && inputs.type !== 33 && inputs.type !== 8 && inputs.type !== 22 && (
+            inputs.type !== 3 && inputs.type !== 33 && inputs.type !== 8 && inputs.type !== 22 && inputs.type !== 34 && (
               <Form.Field>
                 <Form.Input
                   label='代理'
                   name='base_url'
                   placeholder={'此项可选，用于通过代理站来进行 API 调用，请输入代理站地址，格式为：https://domain.com'}
+                  onChange={handleInputChange}
+                  value={inputs.base_url}
+                  autoComplete='new-password'
+                />
+              </Form.Field>
+            )
+          }
+          {
+            inputs.type == 34 && (
+              <Form.Field>
+                <Form.Input
+                  label='基础地址'
+                  name='base_url'
+                  placeholder={'必填，cloudflare基础地址，格式为：https://api.cloudflare.com/client/v4/accounts/ACCOUNT_ID/ai/run'}
                   onChange={handleInputChange}
                   value={inputs.base_url}
                   autoComplete='new-password'

@@ -95,6 +95,15 @@ const EditChannel = (props) => {
                 case 26:
                     localModels = ['glm-4', 'glm-4v', 'glm-3-turbo'];
                     break;
+                case 34:
+                    localModels = [
+                        'llama-2-7b-chat-fp16',
+                        'llama-2-7b-chat-int8',
+                        'mistral-7b-instruct-v0.1',
+                        'llama-3-8b-instruct',
+                        'deepseek-coder-6.7b-base-awq',
+                        'deepseek-coder-6.7b-instruct-awq'];
+                    break;
                 case 2:
                     localModels = ['mj_imagine', 'mj_variation', 'mj_reroll', 'mj_blend', 'mj_upscale', 'mj_describe'];
                     break;

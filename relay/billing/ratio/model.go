@@ -2,8 +2,9 @@ package ratio
 
 import (
 	"encoding/json"
-	"github.com/songquanpeng/one-api/common/logger"
 	"strings"
+
+	"github.com/songquanpeng/one-api/common/logger"
 )
 
 const (
@@ -160,6 +161,10 @@ var ModelRatio = map[string]float64{
 	"step-1v-32k": 0.024 * RMB,
 	"step-1-32k":  0.024 * RMB,
 	"step-1-200k": 0.15 * RMB,
+	// https://developers.cloudflare.com/workers-ai/platform/pricing/#text-generation
+	"llama-2-7b-chat-fp16":     0.66 / 1000 * USD,
+	"llama-2-7b-chat-int8":     0.24 / 1000 * USD,
+	"mistral-7b-instruct-v0.1": 0.19 / 1000 * USD,
 }
 
 var CompletionRatio = map[string]float64{}
